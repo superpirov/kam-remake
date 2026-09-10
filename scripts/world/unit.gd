@@ -153,8 +153,8 @@ func restore_food(n: int) -> void:
 
 func _draw() -> void:
 	var c: Color = BODY.get(team, Color.WHITE)
-	# тень
-	draw_ellipse(Vector2(0, 8), 10, 5, Color(0, 0, 0, 0.35))
+	# тень (встроенный draw_ellipse: позиция, ширина, высота, цвет)
+	draw_ellipse(Vector2(0, 8), 20.0, 10.0, Color(0, 0, 0, 0.35))
 	# тело
 	draw_circle(Vector2.ZERO, 8.0, c)
 	draw_circle(Vector2(0, -3), 5.0, Color(0.9, 0.75, 0.55)) # голова
@@ -172,10 +172,3 @@ func _draw() -> void:
 		var f := clampf(hp / max_hp, 0.0, 1.0)
 		draw_rect(Rect2(-10, -24, 20, 4), Color(0, 0, 0, 0.7))
 		draw_rect(Rect2(-10, -24, 20 * f, 4), Color(0.9, 0.2, 0.2))
-
-func draw_ellipse(center: Vector2, rx: float, ry: float, col: Color) -> void:
-	var pts := PackedVector2Array()
-	for i in 16:
-		var a := TAU * i / 16.0
-		pts.append(center + Vector2(cos(a) * rx, sin(a) * ry))
-	draw_colored_polygon(pts, col)
