@@ -1,0 +1,23 @@
+# Godot 4 — игнор временных и сборочных файлов
+.godot/
+.android/
+.ios/
+export_presets.cfg.bak
+
+# Экспорты
+exports/
+build/
+
+# ОС
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.tmp
+*.log
+
+# Сохранения локальных тестов (не коммитить личные сейвы)
+saves_local/

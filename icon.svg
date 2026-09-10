@@ -1,0 +1,14 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+<rect width="128" height="128" rx="16" fill="#2a1d10"/>
+<rect x="8" y="8" width="112" height="112" rx="10" fill="none" stroke="#c9a227" stroke-width="4"/>
+<!-- щит -->
+<path d="M64 18 L102 32 V66 C102 92 86 106 64 114 C42 106 26 92 26 66 V32 Z" fill="#7a1f1f" stroke="#c9a227" stroke-width="4"/>
+<!-- меч -->
+<rect x="60" y="34" width="8" height="52" fill="#d9d9d9" stroke="#5a5a5a" stroke-width="2"/>
+<polygon points="64,26 70,36 58,36" fill="#d9d9d9" stroke="#5a5a5a" stroke-width="2"/>
+<rect x="48" y="86" width="32" height="6" fill="#c9a227" stroke="#6b4e12" stroke-width="2"/>
+<rect x="60" y="92" width="8" height="10" fill="#4a2f14"/>
+<!-- колос -->
+<circle cx="34" cy="100" r="4" fill="#c9a227"/>
+<circle cx="94" cy="100" r="4" fill="#c9a227"/>
+</svg>
