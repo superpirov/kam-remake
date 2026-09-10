@@ -5,9 +5,9 @@ const MainMenu := preload("res://scripts/ui/main_menu.gd")
 const Briefing := preload("res://scripts/ui/briefing.gd")
 const Hud := preload("res://scripts/ui/hud.gd")
 
-var menu: Control = null
-var briefing: Control = null
-var hud: CanvasLayer = null
+var menu = null
+var briefing = null
+var hud = null
 var world: Node2D = null
 var camera: Camera2D = null
 

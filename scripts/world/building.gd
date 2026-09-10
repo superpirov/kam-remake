@@ -61,7 +61,11 @@ func take_damage(d: float) -> void:
 	hp -= d
 	queue_redraw()
 	if hp <= 0.0:
-		get_parent().building_destroyed(self)
+		var w := get_parent()
+		if w != null and w.has_method("building_destroyed"):
+			w.call("building_destroyed", self)
+		else:
+			queue_free()
 
 func _draw() -> void:
 	var c: Color = COLORS.get(building_id, COLORS["default"])

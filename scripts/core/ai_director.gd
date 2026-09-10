@@ -45,5 +45,5 @@ func _emit_wave() -> void:
 	var comp: Array = []
 	for i in wave_size:
 		comp.append(enemy_comp[randi() % enemy_comp.size()])
-	world.spawn_enemy_wave(comp)
+	world.call("spawn_enemy_wave", comp)
 	GameManager.add_message("Вражеский отряд наступает! (волна %d/%d)" % [waves_sent, max_waves], "alarm")

@@ -102,9 +102,9 @@ func _feed_from_inn() -> bool:
 			return true
 	return false
 
-func feed_squad(squad: Node) -> void:
+func feed_squad(squad) -> void:
 	# приказ «Обеспечить продовольствием»: слуги несут еду к отряду
-	var need := squad.units.size()
+	var need: int = int(squad.units.size())
 	var given := 0
 	for food in ["bread", "sausage", "fish", "wine"]:
 		while given < need and int(GameManager.store.get(food, 0)) > 0:
@@ -134,7 +134,7 @@ const RAW := {
 	"fisherman": {"out": "fish", "time": 16.0},
 }
 
-func _produce_raw(b: Node) -> bool:
+func _produce_raw(b) -> bool:
 	if not RAW.has(b.building_id):
 		return false
 	var r: Dictionary = RAW[b.building_id]

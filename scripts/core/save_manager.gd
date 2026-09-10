@@ -18,7 +18,7 @@ func save_game(slot: int, world: Node) -> bool:
 		"mission_n": GameManager.mission_n,
 		"game_time": GameManager.game_time,
 		"store": GameManager.store,
-		"snapshot": world.get_snapshot() if world.has_method("get_snapshot") else {},
+		"snapshot": world.call("get_snapshot") if world.has_method("get_snapshot") else {},
 	}
 	var f := FileAccess.open(save_path(slot), FileAccess.WRITE)
 	if f == null:

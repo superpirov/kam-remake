@@ -144,7 +144,7 @@ func take_damage(d: float, from: Node = null) -> void:
 func _die(from: Node = null) -> void:
 	var world := get_parent()
 	if world != null and world.has_method("unit_died"):
-		world.unit_died(self, from)
+		world.call("unit_died", self, from)
 	else:
 		queue_free()
 
