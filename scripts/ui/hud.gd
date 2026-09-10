@@ -70,7 +70,7 @@ func _build() -> void:
 	for i in [1, 2, 3]:
 		var b := Button.new()
 		b.text = GameManager.SPEED_NAMES[i]
-		var ii := i
+		var ii: int = i
 		b.pressed.connect(func() -> void:
 			GameManager.speed_idx = ii
 			GameManager.paused = false
@@ -116,7 +116,7 @@ func _build() -> void:
 		tb.text = TABS[k]
 		tb.toggle_mode = true
 		tb.button_pressed = (k == tab)
-		var kk := k
+		var kk: String = str(k)
 		tb.pressed.connect(func() -> void:
 			tab = kk
 			refresh_build())
@@ -154,7 +154,7 @@ func refresh_build() -> void:
 		b.text = "%s\n%s🪚%d 🪨%d" % [str(d.get("name", id)), "TPR·" if (d.get("tpr", false)) else "", int(d.get("timber", 0)), int(d.get("stone", 0))]
 		b.custom_minimum_size = Vector2(128, 52)
 		b.tooltip_text = str(d.get("desc", ""))
-		var iid := id
+		var iid: String = str(id)
 		b.pressed.connect(func() -> void:
 			GameManager.set_ghost(iid)
 			add_msg("Призрак: %s — ЛКМ поставить, ПКМ отмена." % str((ROAD_DEF if iid == "road" else GameData.building(iid)).get("name", iid)), "info")
@@ -235,7 +235,7 @@ func _add_train_buttons(place: String) -> void:
 		var b := Button.new()
 		b.text = "%s (%s)" % [str(d.get("name", sid)), cost]
 		b.tooltip_text = str(d.get("desc", ""))
-		var ss := sid
+		var ss: String = str(sid)
 		b.pressed.connect(func() -> void: _train(ss))
 		info_panel.add_child(b)
 
@@ -270,7 +270,7 @@ func _train_school() -> void:
 func add_msg(text: String, kind := "info") -> void:
 	if msg_box == null:
 		return
-	var col := {"info": "#e8d9a8", "warn": "#ffcf6e", "alarm": "#ff7b6e", "win": "#9fe8a8", "lose": "#ff7b6e", "brief": "#d7e8ff"}.get(kind, "#e8d9a8")
+	var col: String = str({"info": "#e8d9a8", "warn": "#ffcf6e", "alarm": "#ff7b6e", "win": "#9fe8a8", "lose": "#ff7b6e", "brief": "#d7e8ff"}.get(kind, "#e8d9a8"))
 	msg_box.append_text("[color=%s]%s[/color]\n" % [col, text])
 
 func _show_menu() -> void:

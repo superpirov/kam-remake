@@ -109,7 +109,7 @@ func _campaign_box(title: String, campaign: String, count: int) -> VBoxContainer
 		b.custom_minimum_size = Vector2(44, 36)
 		b.disabled = i > unlocked
 		b.tooltip_text = "Миссия %d" % i
-		var ii := i
+		var ii: int = i
 		b.pressed.connect(func() -> void: play_requested.emit(campaign, ii))
 		grid.add_child(b)
 	return box
